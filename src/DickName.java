@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Timer {
+public class DickName {
     public static final String PREFIX = "Хуи";
     public static final String PREFIX_EXCEPTION = "Хуй";
 
