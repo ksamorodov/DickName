@@ -31,6 +31,11 @@ public class DickName {
         if (name.equals(PREFIX)) {
             return PREFIX;
         }
+
+        if (name.equals(PREFIX_EXCEPTION)) {
+            return PREFIX_EXCEPTION;
+        }
+
         if (name.length() == 1 && isFirstLetterVowelCompositePart) {
             return PREFIX.substring(0, 2).concat(compositePartVowelToFullComposite(name.charAt(0)));
         } else if (isFirstLetterVowelComposite) {
