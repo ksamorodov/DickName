@@ -1,0 +1,15 @@
+<div class="form-container">
+  <form *ngIf="response==''" (submit)="sendName(); $event.preventDefault()" [class.dim]="response">
+    <div class="name-label">Введите ваше имя</div>
+    <input type="text" id="name" name="name" [(ngModel)]="name">
+    <button type="submit">Отправить</button>
+  </form>
+  <div class="response-container">
+    <div *ngIf="response" class="response">{{ response }}</div>
+    <button *ngIf="response" class="try-again" (click)="resetForm()">Попробовать еще раз</button>
+  </div>
+</div>
+<div class="fireworks-container" *ngIf="showFireworks">
+  <div class="firework left"></div>
+  <div class="firework right"></div>
+</div>

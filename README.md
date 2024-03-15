@@ -7,7 +7,7 @@ The Dickname Generator Server is a unique, lightweight server application design
 ## Features
 
 - **Name Rhyming**: Input a name, and the server returns a rhyme, making it easier to craft songs, poems, or any content that requires rhyming.
-- **Simple API**: The server exposes a straightforward GET endpoint, making it accessible to developers and non-developers alike.
+- **Simple API**: The server exposes a straightforward POST endpoint, making it accessible to developers and non-developers alike.
 - **Fast and Reliable**: Built with performance in mind, the server responds quickly, ensuring your creative process isn't hindered by waiting times.
 
 ## How to Use
