@@ -1,18 +1,13 @@
-import java.util.Scanner;
+package com.ksamorodov.dickname.service;
 
-public class DickName {
+import org.springframework.stereotype.Service;
+
+@Service
+public class DickNameService {
     public static final String PREFIX = "Хуи";
     public static final String PREFIX_EXCEPTION = "Хуй";
 
-    public static void main(String[] args) {
-        while (true) {
-            System.out.println("Введите свое имя: ");
-            Scanner in = new Scanner(System.in);
-            System.out.println(createDickName(in.next()));
-        }
-    }
-
-    public static String createDickName(String name) {
+    public String createDickName(String name) {
         name = name.toLowerCase();
 
         boolean isFirstLetterVowel = name.matches("^(?ui:[аеёиоуыэюя]).*");
@@ -65,7 +60,7 @@ public class DickName {
         }
     }
 
-    public static String compositePartVowelToFullComposite(Character compositePart) {
+    public String compositePartVowelToFullComposite(Character compositePart) {
         switch (compositePart) {
             case 'а': return "я";
             case 'э': return "е";
