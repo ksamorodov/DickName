@@ -2,13 +2,28 @@ package com.ksamorodov.dickname.service;
 
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 @Service
 public class DickNameService {
     public static final String PREFIX = "Хуи";
     public static final String PREFIX_EXCEPTION = "Хуй";
     public static final String PREFIX_EXCEPTION_ANTON = "Антон";
 
-    public String createDickName(String name) {
+    public String generateDickSentence(String sentence) {
+        String[] words = sentence.split("\\s+");
+
+        // Обрабатываем каждое слово с помощью createDickName
+        String[] dickNames = Arrays.stream(words)
+                .map(i -> createDickName(i))
+                .toArray(String[]::new);
+
+        // Объединяем обработанные слова обратно в строку
+        return String.join(" ", dickNames);
+
+    }
+
+    private String createDickName(String name) {
         name = name.toLowerCase();
 
         boolean isFirstLetterVowel = name.matches("^(?ui:[аеёиоуыэюя]).*");

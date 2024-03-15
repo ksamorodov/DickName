@@ -17,6 +17,6 @@ public class DickNameController {
     @PostMapping("/generate/dickname")
     @CrossOrigin
     public GenerateDickNameResponse generateDickName(@RequestBody GenerateDickNameRequest dickNameRequest) {
-        return new GenerateDickNameResponse(dickNameService.createDickName(dickNameRequest.getName()));
+        return new GenerateDickNameResponse(dickNameService.generateDickSentence(dickNameRequest.getName()));
     }
 }
