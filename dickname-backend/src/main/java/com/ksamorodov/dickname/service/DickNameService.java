@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 public class DickNameService {
     public static final String PREFIX = "Хуи";
     public static final String PREFIX_EXCEPTION = "Хуй";
+    public static final String PREFIX_EXCEPTION_ANTON = "Антон";
 
     public String createDickName(String name) {
         name = name.toLowerCase();
@@ -29,6 +30,10 @@ public class DickNameService {
 
         if (name.equals(PREFIX_EXCEPTION)) {
             return PREFIX_EXCEPTION;
+        }
+
+        if (name.equals(PREFIX_EXCEPTION_ANTON)) {
+            return "Гондон";
         }
 
         if (name.length() == 1 && isFirstLetterVowelCompositePart) {

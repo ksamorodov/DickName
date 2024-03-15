@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ksamorodov</groupId>
-	<artifactId>dickname</artifactId>
+	<artifactId>dickname2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dickname</name>
+	<name>dickname2</name>
 	<description>The application selects a rhyme for a name</description>
     <properties>
         <java.version>17</java.version>
