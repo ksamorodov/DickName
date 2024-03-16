@@ -1,0 +1,18 @@
+.btn {
+  padding: 10px 20px;
+  border-radius: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: $primary;
+  color: $text-white;
+}
+
+
+.btn-secondary {
+  background-color: $secondary;
+  color: $text-white;
+}
+
