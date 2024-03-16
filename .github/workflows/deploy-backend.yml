@@ -37,8 +37,9 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app
-        path: target/*.jar # или любой другой путь, который содержит ваш собранный JAR-файл
+        path: dickname-backend/target/*.jar
         overwrite: true
+        if-no-files-found: error
     
     - name: Deploy to VPS
       uses: appleboy/ssh-action@master
