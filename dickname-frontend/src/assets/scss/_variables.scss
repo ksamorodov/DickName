@@ -1,0 +1,23 @@
+$primary: map-get($current-theme, primary);
+$secondary: map-get($current-theme, secondary);
+$success: map-get($current-theme, success);
+$info: map-get($current-theme, info);
+$warning: map-get($current-theme, warning);
+$danger: map-get($current-theme, danger);
+$light: map-get($current-theme, light);
+$dark: map-get($current-theme, dark);
+
+$white: map-get($current-theme, white);
+$black: map-get($current-theme, black);
+$text: map-get($current-theme, text);
+$text-white: map-get($current-theme, text-white);
+$text-black: map-get($current-theme, text-black);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

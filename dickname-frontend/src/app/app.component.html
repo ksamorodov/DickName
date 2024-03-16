@@ -1,12 +1,17 @@
-<div class="form-container">
+<div class="container form-container">
   <form *ngIf="response==''" (submit)="sendName(); $event.preventDefault()" [class.dim]="response">
     <div class="name-label">Введите ваше имя</div>
-    <input type="text" id="name" name="name" [(ngModel)]="name">
-    <button type="submit">Отправить</button>
+    <input type="text" id="name"
+           name="name" [(ngModel)]="name"
+           (focus)="hasBeenFocused=true"
+           [class.has-focus]="hasBeenFocused"
+
+    >
+    <button class="btn btn-primary fade-in" type="submit">Отправить</button>
   </form>
-  <div class="response-container">
-    <div *ngIf="response" class="response">{{ response }}</div>
-    <button *ngIf="response" class="try-again" (click)="resetForm()">Попробовать еще раз</button>
+  <div class="response-container" *ngIf="response">
+    <div class="response">{{ response }}</div>
+    <button class="btn btn-secondary fade-in" (click)="resetForm()">Попробовать еще раз</button>
   </div>
 </div>
 <div class="fireworks-container" *ngIf="showFireworks">

@@ -1,0 +1,34 @@
+@mixin default-theme($theme-map) {
+  $primary: map-get($theme-map, primary);
+  $secondary: map-get($theme-map, secondary);
+  $info: map-get($theme-map, info);
+  $success: map-get($theme-map, success);
+  $warning: map-get($theme-map, warning);
+  $danger: map-get($theme-map, danger);
+  $light: map-get($theme-map, light);
+  $dark: map-get($theme-map, dark);
+  $white: map-get($theme-map, white);
+  $black: map-get($theme-map, black);
+  $text: map-get($theme-map, text);
+  $text-white: map-get($theme-map, white);
+  $text-black: map-get($theme-map, black);
+  $background-image: map-get($theme-map, background-image);
+  $background-opacity: map-get($theme-map, background-opacity);
+
+  body {
+    //color: $text;
+    &::before{
+      background-image: $background-image;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: $background-opacity;
+      z-index: -1;
+      //filter: $background-filter;
+    }
+  }
+
+}

@@ -1,0 +1,43 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  padding: 20px;
+  background-color: $light;
+  border-radius: 38px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+form.dim {
+  opacity: 0.6;
+}
+
+input {
+  background-color: $white;
+  color: $text;
+}
+
+input[type="text"] {
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 18px;
+  border: 1px solid $info;
+  outline: none;
+
+  &:focus{
+    animation: fadeInShadow 300ms forwards;
+  }
+
+  &.has-focus:not(:focus) {
+    animation: fadeOutShadow 300ms forwards;
+  }
+
+}

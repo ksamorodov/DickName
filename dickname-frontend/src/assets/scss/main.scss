@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+// Do not change order of imports
+@import "./fonts";
+@import "./themes/enabled";
+@import "./mixins";
+
+$current-theme: $theme-light; // here u can change the theme
+@include default-theme($current-theme);
+
+
+@import "./variables";
+@import "./utils/animations";
+@import "./utils/font";
+
+
+
+
+@import "./components/buttons";
+@import "./components/container";
+@import "./components/form";
+
+@import "./pages/dick";
+
