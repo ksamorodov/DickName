@@ -3,7 +3,9 @@ package com.ksamorodov.dickname.controller;
 import com.ksamorodov.dickname.dao.request.GenerateDickNameRequest;
 import com.ksamorodov.dickname.dao.response.GenerateDickNameResponse;
 import com.ksamorodov.dickname.service.DickNameService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +18,7 @@ public class DickNameController {
 
     @PostMapping("/generate/dickname")
     @CrossOrigin
-    public GenerateDickNameResponse generateDickName(@RequestBody GenerateDickNameRequest dickNameRequest) {
+    public GenerateDickNameResponse generateDickName(@Valid @RequestBody GenerateDickNameRequest dickNameRequest) {
         return new GenerateDickNameResponse(dickNameService.generateDickSentence(dickNameRequest.getName()));
     }
 }
