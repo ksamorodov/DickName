@@ -6,14 +6,14 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Deploy App to VPS
 
 on:
   push:
     branches: [ "workflow" ]
 
 jobs:
-  build:
+  spring:
 
     runs-on: ubuntu-latest
 
@@ -48,8 +48,35 @@ jobs:
         username: ${{ secrets.VPS_USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd ${{ secrets.APPLICATION_PATH }}
+          cd /opt/dickname/backend
           rm -f *.jar
           artifact_url=$(curl -L -s -o /dev/null -w "%{url_effective}" -H "Authorization: Bearer ${{ secrets.USER_TOKEN }}" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/${{ steps.artifact-upload-step.outputs.artifact-id }}/zip")
           wget $artifact_url -O app.zip
           unzip app.zip
+  
+  
+  angular:
+      runs-on: ubuntu-latest
+
+      steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+      - run: |
+          cd dickname-frontend
+          npm ci --legacy-peer-deps
+          npm run build
+
+      - name: Deploy to server
+        uses: easingthemes/ssh-deploy@v4
+        with:
+          REMOTE_HOST: ${{ secrets.VPS_HOST }}
+          REMOTE_USER: ${{ secrets.VPS_USERNAME }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SOURCE: dickname-frontend/dist/dickname-frontend/browser
+          TARGET: /opt/dickname/frontend
+          SCRIPT_BEFORE: ls
