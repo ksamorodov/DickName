@@ -21,7 +21,7 @@ export class AppComponent {
   constructor(private http: HttpClient) { }
 
   sendName() {
-    this.http.post<{dickName: string}>('http://localhost:8080/generate/dickname', { name: this.name })
+    this.http.post<{dickName: string}>('/api/generate/dickname', { name: this.name })
       .subscribe(data => {
         this.response = data.dickName;
         this.showFireworks = true;

@@ -1,9 +1,9 @@
 # Dickname Generator Server
-http://135.181.148.193
+https://dickname.serje3.ru
 
 ## Overview
 
-The Dickname Generator Server is a unique, lightweight server application designed to generate dickname for any names. This innovative tool is perfect for writers, poets, lyricists, or anyone in need of finding the perfect rhyme to complement a name in their creative projects. The server operates at `http://135.181.148.193:8080/generate/dickname`, providing an easy-to-use API endpoint for generating rhymes.
+The Dickname Generator Server is a unique, lightweight server application designed to generate dickname for any names. This innovative tool is perfect for writers, poets, lyricists, or anyone in need of finding the perfect rhyme to complement a name in their creative projects. The server operates at `https://dickname.serje3.ru/api/generate/dickname`, providing an easy-to-use API endpoint for generating rhymes.
 
 ## Features
 
@@ -16,8 +16,9 @@ The Dickname Generator Server is a unique, lightweight server application design
 To use the Rhyme Generator Server, simply make a POST request to the endpoint with the name you want to find a rhyme for. Here's a quick example using `curl`:
 
 ```bash
-curl --location 'http://135.181.148.193:8080/generate/dickname' \
+curl --location 'https://dickname.serje3.ru/api/generate/dickname' \
 --header 'Content-Type: application/json' \
 --data '{
     "name": "Витя"
 }'
+```
