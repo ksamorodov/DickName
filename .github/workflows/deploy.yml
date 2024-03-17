@@ -10,7 +10,7 @@ name: Deploy App to VPS
 
 on:
   push:
-    branches: [ "workflow" ]
+    branches: [ "master" ]
 
 jobs:
   spring:
