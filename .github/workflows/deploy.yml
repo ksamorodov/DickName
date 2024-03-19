@@ -11,8 +11,6 @@ name: Deploy App to VPS
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
 
 jobs:
   spring:
