@@ -39,15 +39,15 @@ public class DickNameService {
         boolean isThirdLetterVowelCompositePart = name.matches("^(?ui:..[эоуа]).*");
         boolean isThirdLetterVowelComposite = name.matches("^(?ui:..[еёюя]).*");
 
-        if (name.equals(PREFIX)) {
+        if (name.equals(PREFIX.toLowerCase())) {
             return PREFIX;
         }
 
-        if (name.equals(PREFIX_EXCEPTION)) {
+        if (name.equals(PREFIX_EXCEPTION.toLowerCase())) {
             return PREFIX_EXCEPTION;
         }
 
-        if (name.equals(PREFIX_EXCEPTION_ANTON)) {
+        if (name.equals(PREFIX_EXCEPTION_ANTON.toLowerCase())) {
             return "Гондон";
         }
 
