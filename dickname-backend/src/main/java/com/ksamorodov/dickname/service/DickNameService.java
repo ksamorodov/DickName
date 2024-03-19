@@ -4,11 +4,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class DickNameService {
-    public static final String PREFIX = "Хуи";
-    public static final String PREFIX_EXCEPTION = "Хуй";
-    public static final String PREFIX_EXCEPTION_ANTON = "Антон";
+    private static final String PREFIX = "Хуи";
+    private static final String PREFIX_EXCEPTION = "Хуй";
+    private static final String PREFIX_EXCEPTION_ANTON = "Антон";
 
     public String generateDickSentence(String sentence) {
         String[] words = sentence.split("\\s+");
