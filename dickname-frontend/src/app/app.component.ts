@@ -9,18 +9,19 @@ import {NgIf} from "@angular/common";
   standalone: true,
   imports: [RouterOutlet, HttpClientModule, FormsModule, NgIf],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'dickname';
   name: string = '';
   response: string = '';
   showFireworks: boolean = false;
+  hasBeenFocused: boolean = false;
 
   constructor(private http: HttpClient) { }
 
   sendName() {
-    this.http.post<{dickName: string}>('http://135.181.148.193:8080/generate/dickname', { name: this.name })
+    this.http.post<{dickName: string}>('http://localhost:8080/generate/dickname', { name: this.name })
       .subscribe(data => {
         this.response = data.dickName;
         this.showFireworks = true;

@@ -1,0 +1,31 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInShadow {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: 0 0 10px $primary;
+  }
+}
+
+@keyframes fadeOutShadow {
+  from {
+    box-shadow: 0 0 10px $primary;
+  }
+  to {
+    box-shadow: none;
+  }
+}
+
+
+.fade-in {
+  animation: fadeIn 1s;
+}

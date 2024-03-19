@@ -1,4 +1,5 @@
 # Dickname Generator Server
+http://135.181.148.193
 
 ## Overview
 
