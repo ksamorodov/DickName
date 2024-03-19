@@ -20,7 +20,6 @@ public class DickNameService {
 
         // Объединяем обработанные слова обратно в строку
         return String.join(" ", dickNames);
-
     }
 
     private String createDickName(String name) {
